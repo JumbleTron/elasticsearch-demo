@@ -3,7 +3,7 @@
 ## Run:
 
 * docker-compose up
-* genera token for kibana 
+* genera token for kibana works only with https
 
 ``
 docker-compose exec -it elasticsearch01 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
@@ -37,7 +37,7 @@ Authorization: ApiKey $EC_API_KEY
 
 ``
 curl --request PUT \
---url https://localhost:9200/products \
+--url http://localhost:9200/products \
 --header 'Authorization: ApiKey $API_KEY' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -68,7 +68,7 @@ curl --request PUT \
 
 ``
 curl --request POST \
---url https://localhost:9200/products/_doc \
+--url http://localhost:9200/products/_doc \
 --header 'Authorization: ApiKey $API_KEY' \
 --header 'Content-Type: application/json' \
 --data '{
